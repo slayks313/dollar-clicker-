@@ -150,7 +150,7 @@ html,body {
     margin: 0 5px;
     background-color: gray;
     border-radius: 50%;
-   
+    margin-left:0px;
 }
 
 .indicator.active {
@@ -211,6 +211,6 @@ html,body {
     color: wheat;
    position: absolute;
    top:  269px;
-   left: 140px;
+   left: 135px;
    
 }
