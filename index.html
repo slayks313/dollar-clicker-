@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style.css">
+    <title>dollar clicker</title>
+</head>
+<body>
+    <div class="game">
+        <div class="header">
+            <img src="img/sing.png" alt="sing">
+            <h2 class="score" id="score">0</h2>
+        </div>
+        <div class="circle">
+            <img id="circle" src="img/cent.webp" alt="cent">
+        </div>
+        <div class="bnt">
+            <button id="openWindowButton"><img src="img/up.png" alt=""></button>
+        </div>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <div id="upgradeIndicators">
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                </div>
+                <button id="upgradeButton">Улучшить клики за $10</button>
+            
+                <div class="bnt">
+                    <button id="changeBackgroundButton">Изменить обои </button>
+                </div>
+               
+                <span class="close">&times;</span>
+            
+            </div>
+        </div>
+        
+    </div>
+    <script src="src/app.js"></script>
+</body>
+</html>
