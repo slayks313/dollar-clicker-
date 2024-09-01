@@ -110,7 +110,7 @@ function setImage() {
 
 function updateUpgradeButtonText() {
     if (upgradesBought < upgradeCosts.length) {
-        document.getElementById('upgradeButton').innerText = `Улучшить клики за $${upgradeCosts[upgradesBought]}`;
+        document.getElementById('upgradeButton').innerText = `Улучшить клики`;
     } else {
         document.getElementById('upgradeButton').innerText = 'max';
         document.getElementById('upgradeButton').disabled = true;
