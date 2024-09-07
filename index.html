@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./src/style.css">
+    <title>dollar clicker</title>
+</head>
+<body>
+    <div id="fakeLoadingScreen" style="display: none;">
+        <div class="logo">
+            <img src="img/logo1.jpg" alt="">
+        </div>
+        <div class="loading-bar-container">
+            <div id="loadingBar" class="loading-bar"></div>
+        </div>
+        <p>Загрузка...</p>
+    </div>
+    
+    
+    
+    <div class="game">
+        <div class="header">
+            <img src="img/sing.png" alt="sing">
+            <h2 class="score" id="score">0</h2>
+        </div>
+        <div class="circle">
+            <img id="circle" src="img/cent.webp" alt="cent">
+        </div>
+        <div class="bnt">
+            <button id="openWindowButton"><img src="img/up.png" alt=""></button>
+            <button class="settings-button" onclick="window.location.href='./sayt.html';"><img src="img/nast1.png" alt=""></button>
+            <button id="taskButton">
+                <img src="img/zag.png" alt="">
+            </button>
+        </div>
+      
+        <div id="taskModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeTaskModal">&times;</span>
+                <h3>Задания</h3>
+                <ul id="taskList">
+                    <li id="task1">
+                        <span class="task-text">Накопить 5000$</span>
+                        <button class="task-button" onclick="completeTask(5000, 'task1')">Выполнить</button>
+                    </li>
+                    <li id="task2">
+                        <span class="task-text">Накопить 10000$</span>
+                        <button class="task-button" onclick="completeTask(10000, 'task2')">Выполнить</button>
+                    </li>
+                    <li id="task3">
+                        <span class="task-text">Совершить 10000 кликов</span>
+                        <button class="task-button" onclick="completeTask(10000, 'task3')">Выполнить</button>
+                    </li>
+                    <li id="task4">
+                        <span class="task-text">Накопить 20000$</span>
+                        <button class="task-button" onclick="completeTask(20000, 'task4')">Выполнить</button>
+                    </li>
+                    <li id="task5">
+                        <span class="task-text">Накопить 50000$</span>
+                        <button class="task-button" onclick="completeTask(50000, 'task5')">Выполнить</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <div id="upgradeIndicators">
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                </div>
+                <button id="upgradeButton">Улучшить клики за $10</button>
+            
+                <div class="bnt">
+                    <button id="changeBackgroundButton">Изменить обои </button>
+                </div>
+               
+                <span class="close1">&times;</span>
+            
+            </div>
+        </div>
+        <!-- Кнопка для открытия окна с подарками -->
+<button id="giftButton">
+   7д подрок
+</button>
+
+<!-- Модальное окно для семидневных подарков -->
+<div id="giftModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeGiftModal">&times;</span>
+        <h3>Семидневные подарки</h3>
+        <ul id="giftList">
+            <li id="day1">День 1: 100 монет <button class="gift-button" onclick="claimGift(1, 100)">Забрать</button></li>
+            <li id="day2">День 2: 200 монет <button class="gift-button" onclick="claimGift(2, 200)">Забрать</button></li>
+            <li id="day3">День 3: 300 монет <button class="gift-button" onclick="claimGift(3, 300)">Забрать</button></li>
+            <li id="day4">День 4: 400 монет <button class="gift-button" onclick="claimGift(4, 400)">Забрать</button></li>
+            <li id="day5">День 5: 500 монет <button class="gift-button" onclick="claimGift(5, 500)">Забрать</button></li>
+            <li id="day6">День 6: 600 монет <button class="gift-button" onclick="claimGift(6, 600)">Забрать</button></li>
+            <li id="day7">День 7: 1000 монет <button class="gift-button" onclick="claimGift(7, 1000)">Забрать</button></li>
+        </ul>
+    </div>
+</div>
+
+        
+    </div>
+    <script src="src/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,533 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+* {
+         /* outline: 4px solid rgb(30, 255, 0) !important;      */
+}
+
+html,body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1c1f24;
+    font-family: "Inter", system-ui;
+    transition: background-color 2s ease; /* Плавное изменение фона */
+   
+   
+}
+/* Стиль модального окна для подарков */
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+    max-height: 80vh; /* Ограничиваем высоту окна */
+    overflow-y: auto;  /* Добавляем вертикальную прокрутку */
+}
+
+#giftList {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Элементы списка подарков */
+#giftList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+/* Основной стиль для кнопки подарков */
+#giftButton {
+    background-color: #4CAF50;   /* Зеленый цвет фона */
+    color: white;                /* Цвет текста */
+    padding: 10px 20px;          /* Внутренние отступы */
+    font-size: 16px;             /* Размер текста */
+    border: none;                /* Убираем границу */
+    border-radius: 5px;          /* Закругленные углы */
+    cursor: pointer;             /* Курсор при наведении */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавные эффекты */
+    width: 100%;
+}
+
+/* Эффект при наведении */
+#giftButton:hover {
+    background-color: #45a049;   /* Темно-зеленый цвет при наведении */
+    transform: scale(1.05);      /* Легкое увеличение кнопки */
+}
+
+/* Эффект нажатия */
+#giftButton:active {
+    transform: scale(0.95);      /* Легкое уменьшение при нажатии */
+}
+
+/* Стиль для отключенной кнопки */
+#giftButton:disabled {
+    background-color: #ccc;      /* Серый цвет для отключенной кнопки */
+    cursor: not-allowed;         /* Курсор "запрещено" */
+}
+
+
+/* Кнопки получения подарков */
+#giftButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#giftButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.game {
+
+    width: 250px;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header img {
+    width: 50px;
+    height: 50px;
+    margin-right:14px ;
+    user-select: none;
+}
+.score {
+    color: #fff;
+    align-items: center;
+    font-size: 36px;
+    font-weight: 800;
+    user-select: none;
+}
+.circle {
+    position: relative;
+  
+}
+.circle img {
+    width: 200px;
+    height: 200px;
+    border-radius:50% ;
+    box-shadow: 0px 0px 16px 0px rgba(138, 143, 254, 0.5);
+    transition: transform 0.2 ease;
+    --tiltX: 0deg;
+    --tiltY: 0deg;
+    transform: rotateX(var(--tiltX)) rotateY(var(--tiltY));
+    user-select: none;
+    margin: auto;
+    margin-left: 20px;
+   
+    
+}
+.plus-one {
+    position: absolute;
+    font-family: Inter;
+    text-shadow: 0px 0px 10px 0px rgb(255, 179, 0) ;
+    font-size: 24px;
+    font-weight: 800;
+    background: linear-gradient(180deg, #e8c547 0%, #ef882b 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    pointer-events: none;
+    user-select: none;
+    animation: move-up 2s forwards;
+
+}
+@keyframes move-up {
+    0%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+#fakeLoadingScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    flex-direction: column;
+}
+
+/* Контейнер для полоски загрузки */
+.loading-bar-container {
+    width: 40%; /* Уменьшаем ширину полоски */
+    background-color: #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+/* Полоска загрузки */
+.loading-bar {
+    width: 0;
+    height: 20px; /* Уменьшаем высоту полоски */
+    background-color: #4caf50;
+    border-radius: 10px;
+    transition: width 0.1s;
+}
+.logo>img {
+    width: 100px;
+    height: 100px;
+    border: 20px;
+    
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#openWindowButton {
+    display: block;
+    margin: 20px auto;
+ 
+    font-size: 16px;
+    width: 70px;
+    height: 100px;
+    cursor: pointer;
+    border: 2px solid rgb(51, 255, 0);
+    background-color:#1c1f24;
+    border-radius: 15px;
+    user-select: none;
+}
+#openWindowButton>img {
+    width: 44px;
+    height: 44px;
+    margin-top:40px ;
+  user-select: none;
+}
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); 
+    user-select: none;
+}.bnt {
+    display: flex;
+    gap: 10px; /* Задает расстояние между кнопками */
+}
+
+button {
+    background-color: #f0f0f0; /* Пример цвета фона */
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.settings-button {
+    display: block;
+    margin: 20px auto;
+ 
+    font-size: 16px;
+    width: 70px;
+    height: 100px;
+    cursor: pointer;
+    border: 2px solid rgb(51, 255, 0);
+    background-color:#1c1f24;
+    border-radius: 15px;
+    color: white;
+    user-select: none;
+}
+.settings-button>img {
+    width: 44px;
+    height: 44px;
+    margin-top:40px ;
+  user-select: none;
+}
+#taskButton {
+    display: block;
+    margin: 20px auto;
+ 
+    font-size: 16px;
+    width: 70px;
+    height: 100px;
+    cursor: pointer;
+    border: 2px solid rgb(51, 255, 0);
+    background-color:#1c1f24;
+    border-radius: 15px;
+    color: white; 
+    user-select: none;
+}
+#taskButton>img {
+    width: 44px;
+    height: 44px;
+    margin-top:40px ;
+  user-select: none;
+ 
+}
+
+#upgradeButton{
+    display: block;
+
+ 
+    font-size: 16px;
+   padding: 15px;
+    cursor: pointer;
+    border: 2px solid rgb(51, 255, 0);
+ background: transparent;
+    border-radius: 15px;
+    color: wheat;
+    position: absolute;
+    right: 40px;
+    top: 170px;
+
+}
+#buyClickerButton {
+    position: absolute;
+}
+#upgradeIndicators {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+ 
+    width: 140px;
+    position: absolute;
+    left: 50px;
+    top: 170px;
+}
+
+.indicator {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    background-color: gray;
+    border-radius: 50%;
+   margin-left:0px;
+}
+
+.indicator.active {
+    background-color: green;
+}
+
+.modal-content {
+    background-color: #1c1f24;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    height: 500px;
+    max-width: 500px;
+    text-align: center;
+    user-select: none;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+.close1 {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
+
+.close1:hover,
+.close1:focus {
+    color: black;
+    text-decoration: none;
+}
+.background-1 {
+    background-color: #3498db; /* Голубой фон */
+    background-size: cover;
+    width: 100%;
+    height: 100vh; /* Покрывает всю высоту экрана */
+}
+
+.background-2 {
+    background-color: #2ecc71; /* Зеленый фон */
+    background-size: cover;
+    width: 100%;
+    height: 100vh; /* Покрывает всю высоту экрана */
+}
+
+
+#changeBackgroundButton {
+    display: block;
+
+ 
+    font-size: 16px;
+   padding: 15px;
+    cursor: pointer;
+    border: 2px solid rgb(51, 255, 0);
+ background: transparent;
+    border-radius: 15px;
+    color: wheat;
+   position: absolute;
+   top:  269px;
+   left: 140px;
+   
+}/* Стиль модального окна для заданий */
+.modal-content-task {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+/* Список заданий */
+.task-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Стиль для каждого задания */
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+}
+
+/* Анимация при наведении */
+.task-item:hover {
+    background-color: #f1f1f1;
+}
+
+/* Описание задания */
+.task-description {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Стиль кнопок для выполнения задания */
+.task-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Анимация при наведении на кнопку */
+.task-button:hover {
+    background-color: #45a049;
+}
+
+/* Стили для отключенной кнопки */
+.task-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+/* Стиль для списка заданий */
+#taskList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#taskList li {
+    display: flex;
+    justify-content: space-between; /* Текст и кнопка разделены */
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Текст задания */
+.task-text {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 20px; /* Отступ между текстом и кнопкой */
+}
+
+/* Кнопка выполнения задания */
+.task-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Анимация при наведении */
+.task-button:hover {
+    background-color: #45a049;
+}
+
+
+
+
+.settings-button .icon {
+    margin-right: 8px; /* Отступ между иконкой и текстом */
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    /* Уменьшаем ширину полоски ещё больше для мобильных устройств */
+    .loading-bar-container {
+        width: 60%;
+    }
+    
+    /* Оставляем высоту полоски маленькой */
+    .loading-bar {
+        height: 8px;
+    }
+
+    /* Размер текста для мобильных устройств */
+    #fakeLoadingScreen p {
+        font-size: 14px;
+    }
+}
