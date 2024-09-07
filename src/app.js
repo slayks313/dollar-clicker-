@@ -111,7 +111,7 @@ function showFakeLoadingScreen(duration) {
 }
 
 // Пример вызова с временем 3 секунды
-showFakeLoadingScreen(1000);
+showFakeLoadingScreen(5000);
 
 
 function setImage() {
